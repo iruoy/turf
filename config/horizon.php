@@ -186,11 +186,27 @@ return [
                 'balanceMaxShift' => 1,
                 'balanceCooldown' => 3,
             ],
+
+            'event-sourcing-supervisor-1' => [
+                'connection' => 'redis',
+                'queue' => [env('EVENT_PROJECTOR_QUEUE_NAME')],
+                'balance' => 'simple',
+                'processes' => 1,
+                'tries' => 3,
+            ],
         ],
 
         'local' => [
             'supervisor-1' => [
                 'maxProcesses' => 3,
+            ],
+
+            'event-sourcing-supervisor-1' => [
+                'connection' => 'redis',
+                'queue' => [env('EVENT_PROJECTOR_QUEUE_NAME')],
+                'balance' => 'simple',
+                'processes' => 1,
+                'tries' => 3,
             ],
         ],
     ],
