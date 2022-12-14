@@ -8,6 +8,7 @@
         "php": "^8.0.2",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^9.19",
+        "laravel/horizon": "^5.10",
         "laravel/nova": "~4.0",
         "laravel/sanctum": "^3.0",
         "laravel/telescope": "^4.10",
@@ -42,6 +43,7 @@
         ],
         "post-update-cmd": [
             "@php artisan vendor:publish --tag=laravel-assets --ansi --force",
+            "@php artisan horizon:publish --ansi --force",
             "@php artisan nova:publish --ansi --force",
             "@php artisan telescope:publish --ansi --force"
         ],
